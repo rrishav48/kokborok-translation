@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>English to Kokborok Translator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #93c5fd, #e0f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      max-width: 520px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #1e3a8a;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      resize: vertical;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+    }
+
+    textarea:focus {
+      border-color: #3b82f6;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(90deg, #3b82f6, #2563eb);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #2563eb, #1e40af);
+      transform: translateY(-2px);
+    }
+
+    button:disabled {
+      background: #93c5fd;
+      cursor: not-allowed;
+    }
+
+    .output {
+      margin-top: 20px;
+    }
+
+    /* Add a subtle fade-in for output text */
+    .output textarea {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .output textarea.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>English to Kokborok Translator</h1>
+    <div class="form-group">
+      <label for="english-text">Enter English Text:</label>
+      <textarea id="english-text" rows="4" placeholder="Type your English sentence here..."></textarea>
+    </div>
+    <button id="translate-btn">Translate</button>
+    <div class="form-group output">
+      <label for="kokborok-text">Kokborok Translation:</label>
+      <textarea id="kokborok-text" rows="4" readonly placeholder="Translated Kokborok text will appear here..."></textarea>
+    </div>
+  </div>
+
+  <script>
+    const translateBtn = document.getElementById('translate-btn');
+    const englishText = document.getElementById('english-text');
+    const kokborokText = document.getElementById('kokborok-text');
+
+    translateBtn.addEventListener('click', () => {
+      const input = englishText.value.trim();
+      if (input === '') {
+        alert('Please enter some text to translate.');
+        return;
+      }
+
+      // Dummy translation logic - replace with real API later
+      kokborokText.value = "Dummy Kokborok translation of: " + input;
+      kokborokText.classList.add('visible');
+    });
+  </script>
+
+</body>
+
+</html>
