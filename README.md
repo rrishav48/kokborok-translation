@@ -1,1 +1,0 @@
-# kokborok-translation
